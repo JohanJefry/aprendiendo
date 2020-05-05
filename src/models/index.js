@@ -18,7 +18,7 @@ const sequelize = new Sequelize(database, username, password, {
 })
 
 
-console.log(sequelize);
+//console.log(sequelize);
 
 //Models
 const models = {

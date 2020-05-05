@@ -1,7 +1,13 @@
-//se me paso la parte de babel
+//V1. se me paso la parte de babel
 
 //instalar para postgresql
 se creo carpeta config para la bd y se instalo 
 npm i sequelize pg pg-hstore ( sequelize es un ORM y pg-hstore para trabajarlo con json)
 
-//
+//V1.0.3. 3er video consultas graphql y todose almacena en postgresql
+npm i merge-graphql-schemas //para poder juntar los schemas ()se agrega a nodemon 
+    se uso en graphql/types/index.js
+se crea Resolves y types para operaciones de graphql
+se creo utils security para q cada user tenga una key adicional y hash
+
+    
