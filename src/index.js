@@ -5,12 +5,12 @@ import { ApolloServer, makeExecutableSchema } from 'apollo-server'
 //Models video 2
 import models from './models';
 
-//Type Definition & resolvers
+//Type Definition & resolvers video 3
 import resolvers from './graphql/resolves'
 import typeDefs from './graphql/types'
 
-//schema
-const schema = makeExecutableSchema({
+//schema (graphql) 
+const schema = makeExecutableSchema({ //de lib merge-graphql-schemas para configurar serv con apollo
     typeDefs,
     resolvers
 });
@@ -18,7 +18,7 @@ const schema = makeExecutableSchema({
 //Apollo Server
 const apolloServer = new ApolloServer({
     schema,
-    context: {
+    context: { //definir el contexto en este caso sequelize
         models
     }
 });
@@ -27,6 +27,6 @@ const apolloServer = new ApolloServer({
 const alter = true;
 const force = false; //fuerza a crear bd sql pero borra si tenia datos
 
-models.sequelize.sync({ alter, force }).then(() => {
+models.sequelize.sync({ alter, force }).then(() => { //Syncroniza sequelize xon graphql para consultas a travez de apollo
     apolloServer.listen(5000).then(({ url }) => console.log(`Running on ${url}`));
 });

@@ -1,6 +1,6 @@
 import { encrypt } from '../utils/security'
 export default (sequelize, { BOOLEAN, STRING, UUID, UUIDV4 }) => {
-    const User = sequelize.define('User', {
+    const User = sequelize.define('User', { //crear tabla user(sequelize lo cambia a users) 
         id: {
             primaryKey: true,
             allowNull: false,
@@ -55,7 +55,7 @@ export default (sequelize, { BOOLEAN, STRING, UUID, UUIDV4 }) => {
         }
     });
 
-    User.associate = models => {
+    User.associate = models => { // para crear llaves foranea user_id en post
         User.hasMany(models.Post, {
             foreignKey: {
                 name: 'userId',

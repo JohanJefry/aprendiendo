@@ -8,11 +8,11 @@ import { $db } from '../../config'
 const { database, username, password, dialect, port } = $db();
 
 
-const sequelize = new Sequelize(database, username, password, {
+const sequelize = new Sequelize(database, username, password, { //coneccion postgresql
     dialect,
     port,
     define: {
-        underscored: true
+        underscored: true // createdAt en kamecase
     }
 
 })
