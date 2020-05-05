@@ -1,0 +1,7 @@
+//se me paso la parte de babel
+
+//instalar para postgresql
+se creo carpeta config para la bd y se instalo 
+npm i sequelize pg pg-hstore ( sequelize es un ORM y pg-hstore para trabajarlo con json)
+
+//
