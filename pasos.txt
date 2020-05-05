@@ -10,4 +10,7 @@ npm i merge-graphql-schemas //para poder juntar los schemas ()se agrega a nodemo
 se crea Resolves y types para operaciones de graphql
 se creo utils security para q cada user tenga una key adicional y hash
 
-    
+
+//V1.0.4 4to video creando autenticacion JWT 
+npm i jsonwebtoken  // para JWT autenticacion por tokens
+se crea una nueva mutation en resolvers user
