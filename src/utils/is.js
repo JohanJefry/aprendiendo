@@ -1,20 +1,21 @@
+export const isArray = variable => Array.isArray(variable);
 export const isDefined = variable => typeof variable !== 'undefined' && variable !== null;
 export const isFalse = variable => isDefined(variable) && variable === false;
 export const isNumber = variable => typeof variable === 'number';
 export const isFunction = variable => typeof variable === 'function';
 
 export const isJson = str => {
-    if (!str || str === null) {
-        return false;
-    }
+  if (!str || str === null) {
+    return false;
+  }
 
-    try {
-        JSON.parse(str);
-    } catch (e) {
-        return false;
-    }
-    return true;
-}
+  try {
+    JSON.parse(str);
+  } catch (e) {
+    return false;
+  }
+  return true;
+};
 
 export const isObject = variable => isDefined(variable) && typeof VarDate === 'object' && !Array.isArray(variable);
 export const isPassword = (password, min = 8) => password && password.length >= min;

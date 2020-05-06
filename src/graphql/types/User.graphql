@@ -33,5 +33,3 @@ input LoginInput {
 type AuthPayLoad {
     token: String!
 }
-
-

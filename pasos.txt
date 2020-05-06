@@ -1,16 +1,41 @@
 //V1. se me paso la parte de babel
 
 //instalar para postgresql
-se creo carpeta config para la bd y se instalo 
+se creo carpeta config para la bd y se instalo
 npm i sequelize pg pg-hstore ( sequelize es un ORM y pg-hstore para trabajarlo con json)
 
 //V1.0.3. 3er video consultas graphql y todose almacena en postgresql
-npm i merge-graphql-schemas //para poder juntar los schemas ()se agrega a nodemon 
+npm i merge-graphql-schemas //para poder juntar los schemas ()se agrega a nodemon
     se uso en graphql/types/index.js
 se crea Resolves y types para operaciones de graphql
 se creo utils security para q cada user tenga una key adicional y hash
 
-
-//V1.0.4 4to video creando autenticacion JWT 
+//V1.0.4 4to video creando autenticacion JWT
 npm i jsonwebtoken  // para JWT autenticacion por tokens
 se crea una nueva mutation en resolvers user
+
+//v1.0.5 5to video como agregar eslintrc, standarizar
+se agrego target a babel para los sync await
+se creo .editorconfig para estandarizar los editores para varios desarroladores
+
+npm i -D babel-eslint cross-env eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react husky jest sequelize-mock
+
+    eslint = analizador de codigo ante posibles errores, para tests
+    babel-eslint = permite ligar TODO el código válido de Babel con el fantástico ESLint
+    cross-env = Ejecute scripts que establezcan y utilicen variables de entorno en todas las plataformas.(estandarizacion de variables)
+    eslint-config-airbnb = Este paquete proporciona .eslintrc de Airbnb como una configuración compartida extensible (configuracion para reglas slint)
+    eslint-plugin-import = evitar problemas con errores ortográficos de rutas de archivos y nombres de importación
+    eslint-plugin-jsx-a11y = herramienta de análisis de tiempo de ejecución(uso de react)
+    eslint-plugin-react = reglas de linting específicas para ESLint con react
+    husky = Husky puede prevenir el mal git commit, git pushy más
+    jest = Jest es un marco de prueba(test) de JavaScript (para test en paralelo)
+    sequelize-mock = Una interfaz diseñada para probar(test) el código que usa Sequelize .
+
+se creo __tests__ para los test con jest y unitest
+  se usa post.test.js la extencion .test para q jest lo lea
+
+Snapshot crea el return de una clase en __Snapshot__ donde se almacena la info, si la info cambia nos advertira en este caso
+  si el schema cambia nos avisara para evitar rupturas de codigo
+
+CORRER npm run lint para ver los errores del codigo limpio
+

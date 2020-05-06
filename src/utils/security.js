@@ -1,40 +1,40 @@
-//Dependencias
+// Dependencias
 
-import crypto from 'crypto'
+import crypto from 'crypto';
 
-//Configuration
+// Configuration
 import { $security } from '../../config';
 
-//utils
+// utils
 import { isString, isJson, isObject } from './is';
 
 
 export function encrypt(str) {
-    return crypto
-        .createHash('sha1')
-        .update(`${$security().secretKey}${str.toString()}`)
-        .digest('hex');
+  return crypto
+    .createHash('sha1')
+    .update(`${$security().secretKey}${str.toString()}`)
+    .digest('hex');
 }
 
-//setear base 64
+// setear base 64
 
 export function getBase64(value) {
-    let buffer = false;
-    if (isString(value)) {
-        buffer = Buffer.from(value, 'base64').toString('ascii');
-    }
+  let buffer = false;
+  if (isString(value)) {
+    buffer = Buffer.from(value, 'base64').toString('ascii');
+  }
 
-    if (isJson(buffer)) {
-        buffer = JSON.parse(Buffer.from(value, 'base64').toString('ascci'));
-    }
-    return buffer;
+  if (isJson(buffer)) {
+    buffer = JSON.parse(Buffer.from(value, 'base64').toString('ascci'));
+  }
+  return buffer;
 }
 
 export function setBase64(value) {
-    if (isObject(value)) {
-        return Buffer.from(JSON.stringify(value)).toString('base64');
-    } else if (isString(value)) {
-        return Buffer.from(value).toString('base64');
-    }
-    return false;
+  if (isObject(value)) {
+    return Buffer.from(JSON.stringify(value)).toString('base64');
+  } else if (isString(value)) {
+    return Buffer.from(value).toString('base64');
+  }
+  return false;
 }
