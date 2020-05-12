@@ -67,8 +67,8 @@ input CreateUserInput {
 }
 
 input LoginInput {
-  email: String
-  password: String
+  email: String!
+  password: String!
 }
 
 type AuthPayLoad {

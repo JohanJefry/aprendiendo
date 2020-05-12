@@ -4,7 +4,7 @@
     "description": "Tuto",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon src/index.js --ext js --exec babel-node",
+        "start": "nodemon src/index.js --ext js,graphql --exec babel-node",
         "test": "jest src",
         "lint": "eslint src"
     },

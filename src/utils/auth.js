@@ -9,7 +9,7 @@ import { isPasswordMatch } from './is';
 // configuration
 import { $security } from '../../config';
 
-export const createToken = async (user) => { // despues de crear y validar user y export para test
+export const createToken = async user => { // despues de crear y validar user y export para test
   const { id, username, password, email, privilege, active } = user;
   // console.log('ID=== ', id); //para ver si obtenemos id
   const token = setBase64(`${encrypt($security().secretKey)}${password}`);// llama a token en si el password para confundir a un kach y le agrega el paswword en hash
@@ -25,7 +25,8 @@ export const createToken = async (user) => { // despues de crear y validar user 
   // console.log('USERDATA==== ', userData);
   const createTk = jwt.sign( // firma sign
     { data: setBase64(userData) }, // la informacion del user se ofusca o codifica
-    $security().secretKey, { expiresIn: $security().expiresIn }
+    $security().secretKey,
+    { expiresIn: $security().expiresIn }
   );
 
   // console.log('PROMISE=== ', createTk);
@@ -53,7 +54,7 @@ export const doLogin = async (email, password, models) => {
   }
 
   if (!isActive) {
-    throw new AuthenticationError('Your account is not acrivated yet');
+    throw new AuthenticationError('Your account is not activated yet');
   }
 
   const [token] = await createToken(user);

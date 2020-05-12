@@ -3,8 +3,8 @@ import { isFunction } from '../../utils/is';
 import User from '../User';
 
 const sequelize = new Sequelize();
-const DataType = sequelize.Sequelize;// creamos los mismo types de Post (UUID, BOOLEAn)
-const model = User(sequelize, DataType);
+const DataTypes = sequelize.Sequelize;// creamos los mismo types de Post (UUID, BOOLEAn)
+const model = User(sequelize, DataTypes);
 const schema = model._defaults;// contiene el schema real
 
 describe('#User', () => {
@@ -13,15 +13,15 @@ describe('#User', () => {
   });
 
   it('should match the schema', () => {
-    expect(schema).toEqueal({
+    expect(schema).toEqual({
       id: {
         primaryKey: true,
         allowNull: false,
-        type: DataType.UUID,
-        defaultValue: DataType.UUIDV4()
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4()
       },
       username: {
-        type: DataType.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
         unique: true,
         validate: {
@@ -31,16 +31,16 @@ describe('#User', () => {
           },
           len: {
             args: [4, 20],
-            msg: 'the username must be from 4 to 20 characters'
+            msg: 'The username must be from 4 to 20 characters'
           }
         }
       },
       password: {
-        type: DataType.STRING,
+        type: DataTypes.STRING,
         allowNull: false
       },
       email: {
-        type: DataType.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
         unique: true,
         validate: {
@@ -51,12 +51,12 @@ describe('#User', () => {
         }
       },
       privilege: {
-        type: DataType.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
         defaultValue: 'user'
       },
       active: {
-        type: DataType.BOOLEAN,
+        type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: false
       }
@@ -64,7 +64,7 @@ describe('#User', () => {
   });
 
   it('should have beforeCreate hook', () => {
-    expect(isFunction(model.optios.hooks.beforeCreate)).toBe(true);
+    expect(isFunction(model.options.hooks.beforeCreate)).toBe(true);
   });
 
   it('should have associate method', () => {

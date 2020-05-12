@@ -1,7 +1,7 @@
 import { encrypt } from '../utils/security';
 
 export default (sequelize, { BOOLEAN, STRING, UUID, UUIDV4 }) => {
-  const User = sequelize.define('User', { // crear tabla user(sequelize cambia users)
+  const User = sequelize.define('User', {
     id: {
       primaryKey: true,
       allowNull: false,
@@ -19,7 +19,7 @@ export default (sequelize, { BOOLEAN, STRING, UUID, UUIDV4 }) => {
         },
         len: {
           args: [4, 20],
-          msg: 'the username must be from 4 to 20 characters'
+          msg: 'The username must be from 4 to 20 characters'
         }
       }
     },
@@ -56,7 +56,7 @@ export default (sequelize, { BOOLEAN, STRING, UUID, UUIDV4 }) => {
     }
   });
 
-  User.associate = models => { // para crear llaves foranea user_id en post
+  User.associate = models => {
     User.hasMany(models.Post, {
       foreignKey: {
         name: 'userId',

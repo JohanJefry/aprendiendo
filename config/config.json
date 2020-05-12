@@ -9,7 +9,7 @@
         "password": "johafan20"
     },
     "security": {
-        "secretKey": "Gr4pQLCMSJef",
+        "secretKey": "Gr4pQlCM5",
         "expiresIn": "7d"
     }
 }

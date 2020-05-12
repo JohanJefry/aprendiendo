@@ -12,7 +12,6 @@ describe('#createToken', () => {
     };
 
     const [token] = await createToken(user);
-
     expect(token.length).toBe(413);
   });
 });

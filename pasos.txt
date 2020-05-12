@@ -1,4 +1,4 @@
-//V1. se me paso la parte de babel
+﻿//V1. se me paso la parte de babel
 
 //instalar para postgresql
 se creo carpeta config para la bd y se instalo
@@ -39,3 +39,5 @@ Snapshot crea el return de una clase en __Snapshot__ donde se almacena la info, 
 
 CORRER npm run lint para ver los errores del codigo limpio
 
+//V1.0.6 como crear primera app next y conectarlo con express
+CREAMOS CARP FRONTEND Y EMPEZAREMOS AHY
